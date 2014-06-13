@@ -18,5 +18,5 @@ def properDivisors(n: Long): Seq[Long] = {
   val fs = primeFactors(n)
   (1 until fs.size).flatMap(fs.combinations).map(_.product) :+ 1L
 }
-val properDivisorSums = (1L until 10000).map(x => (x, properDivisors(x).sum))
+val properDivisorSums = (1L until 10000).map(x => (x, properDivisors(x).sum)).toSet
 properDivisorSums.filter{case (a, b) => a != b && properDivisorSums.contains((b,a))}.map(_._1).sum
