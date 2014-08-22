@@ -11,4 +11,18 @@
   *
   * Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
   */
+var s = System.nanoTime()
 (2 until 1000000).filter(x => x.toString.map(c => Math.pow(c.asDigit, 5)).sum == x).sum
+(System.nanoTime() - s) / 1000000
+s = System.nanoTime()
+(2 until 1000000).filter(x => x.toString.map(_.asDigit).map(Math.pow(_, 5)).sum == x).sum
+(System.nanoTime() - s) / 1000000
+s = System.nanoTime()
+(2 until 1000000).filter(x => x.toString.map(_.asDigit).map(d => d * d * d * d * d).sum == x).sum
+(System.nanoTime() - s) / 1000000
+s = System.nanoTime()
+(2 until 1000000).filter(x => x.toString.map{c => val d = c.asDigit; d * d * d * d * d}.sum == x).sum
+(System.nanoTime() - s) / 1000000
+s = System.nanoTime()
+(2 until 1000000).filter(x => x.toString.map{c => val d = c.toInt-48; d * d * d * d * d}.sum == x).sum
+(System.nanoTime() - s) / 1000000
