@@ -10,8 +10,8 @@
   */
 (for {
   p <- (1 to 9).mkString("").permutations
-  i <- 1 to 7
-  j <- 1 to 8 - i
+  i <- 1 to 4
+  j <- 1 to 5 - i
   (xS, yzS) = p.splitAt(i)
   (yS, zS) = yzS.splitAt(j)
   if xS.toInt * yS.toInt == zS.toInt
