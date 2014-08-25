@@ -15,4 +15,4 @@
   (xS, yzS) = p.splitAt(i)
   (yS, zS) = yzS.splitAt(j)
   if xS.toInt * yS.toInt == zS.toInt
-} yield zS.toInt).toSet.
+} yield zS.toInt).toSet.sum
