@@ -6,7 +6,4 @@
   * Note: as 1! = 1 and 2! = 2 are not sums they are not included.
   */
 val fact = (1 to 9).scanLeft(1)(_ * _)
-(for {
-  i <- 3 to 10000000
-  if i == i.toString.map(c=>fact(c - 48)).sum
-} yield i).sum
+(3 to 100000).filter(n => n == n.toString.map(c => fact(c - 48)).sum).sum
