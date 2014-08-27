@@ -6,7 +6,7 @@
   * (Please note that the palindromic number, in either base, may not include leading zeros.)
   */
 (for {
-  n <- Stream.range(1, 1000000)
+  n <- Stream.range(1, 1000000, 2)
   s10 = n.toString
   s2  = Integer.toBinaryString(n)
   if s10 == s10.reverse && s2 == s2.reverse
