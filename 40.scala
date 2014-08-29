@@ -10,5 +10,5 @@
   *
   * d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
   */
-lazy val c = Stream.from(0).flatMap(_.toString).map(_-48)
-(0 to 6).map(math.pow(10,_).toInt).map(c).product
+lazy val d = Stream.from(0).flatMap(_.toString).map(_-48)
+Iterator.iterate(1)(_ * 10).take(7).map(d).product
